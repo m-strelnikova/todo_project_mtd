@@ -12,21 +12,25 @@ import { addTodo, deleteTodo, completeTodo } from "../../redux/slices/todoSlice"
 function TodoForm() {
 
     const dispatch = useDispatch();
-    
+
 
     const [todo, setTodo] = useState("");
 
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(addTodo({
-            id: Math.random(),
-            todo,
-        }));
-        setTodo("");
+
+        if (todo.trim().length !== 0) {
+            dispatch(addTodo({
+                id: Math.random(),
+                todo,
+            }));
+
+            setTodo("");
+        }
     }
     return (
-        <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", gap: 15, padding: 15}}>
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 15, padding: 15 }}>
             <TextField
                 id="outlined-controlled"
                 placeholder="Enter new todo"
@@ -43,7 +47,7 @@ function TodoForm() {
                 type="submit"
                 variant="contained" fullWidth
                 color="success"
-                style={{textTransform: 'none', height: "46px"}}
+                style={{ textTransform: 'none', height: "46px" }}
             >Add Todo</Button>
 
         </form>
