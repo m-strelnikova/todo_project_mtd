@@ -4,10 +4,12 @@ import TodoItem from "../todoItem";
 
 function TodoList() {
 
+    const todos = useSelector((state) => state.todo.todos);
 
-    return(
-    <>
-    </>
+    return (
+        <>
+        
+        </>
     )
 }
 export default TodoList; 
