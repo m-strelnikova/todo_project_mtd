@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import TodoItem from "../todoItem";
 import Typography from "@mui/material/Typography";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 
 function TodoList() {
 
@@ -10,13 +12,13 @@ function TodoList() {
     return (
         <div>
             <Typography variant="h1">Todo List</Typography>
-            <ul>
+            <List>
                 {todos.map((todo) => {
-                    <li key={todo.id}>
+                    <ListItem key={todo.id}>
                         <TodoItem todo={todo}/>
-                    </li>
+                    </ListItem>
                 })}
-            </ul>
+            </List>
         
         </div>
     )
