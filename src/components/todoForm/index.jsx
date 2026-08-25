@@ -19,17 +19,17 @@ function TodoForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch.addTodo({
+        dispatch(addTodo({
             id: Math.random(),
             todo,
-        });
+        }));
         setTodo("");
     }
     return (
         <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", gap: 15, padding: 15}}>
             <TextField
                 id="outlined-controlled"
-                label="Enter new todo"
+                placeholder="Enter new todo"
                 fullWidth
                 value={todo}
                 onChange={(event) => {
