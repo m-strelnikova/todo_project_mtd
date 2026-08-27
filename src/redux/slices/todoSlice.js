@@ -14,7 +14,11 @@ const todoSlice = createSlice({
             state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
         },
         completeTodo(state, action) {
+            const todoFind = state.todos.find((todo) => todo.id === action.payload.id)
 
+            if (todoFind) {
+                todoFind.completed = !todoFind.completed;
+            }
         }
     }
 })

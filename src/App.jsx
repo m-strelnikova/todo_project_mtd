@@ -6,10 +6,12 @@ function App() {
   
 
   return (
-    <>
+    <div style={{
+      display: 'flex', flexDirection: "column", margin: "10px 10%"
+    }}>
     <TodoForm />
     <TodoList />
-    </>
+    </div>
   )
 }
 

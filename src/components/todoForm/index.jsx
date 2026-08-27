@@ -12,10 +12,7 @@ import { addTodo, deleteTodo, completeTodo } from "../../redux/slices/todoSlice"
 function TodoForm() {
 
     const dispatch = useDispatch();
-
-
     const [todo, setTodo] = useState("");
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,6 +21,7 @@ function TodoForm() {
             dispatch(addTodo({
                 id: Math.random(),
                 todo,
+                completed: false
             }));
 
             setTodo("");
